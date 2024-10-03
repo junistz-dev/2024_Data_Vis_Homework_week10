@@ -38,7 +38,10 @@
         "y": {
           "field": "water_production",
           "type": "quantitative",
-          "title": "Water Production"
+          "title": "Water Production",
+          "scale":{
+            "domain": [0, 5500]
+          }
         },
         "color": {
           "field": "state",
