@@ -5,8 +5,8 @@
   "params": [
     {
       "name": "Year_selection",
-      "value": 2010,
-      "bind":{
+      "value": 2000,
+      "bind": {
         "input": "range",
         "min": 2000,
         "max": 2022,
@@ -17,8 +17,16 @@
   ],
   "title": "Water Access and Production per State",
   "data": {
-    "url": "https://raw.githubusercontent.com/junistz-dev/2024_Data_Vis_Homework_week10/refs/heads/main/5.%20water_access.csv"
+    "url": "https://raw.githubusercontent.com/junistz-dev/2024_Data_Vis_Project2/refs/heads/main/5.%20water_access.csv",
+    "format": {
+      "type": "csv"
+    }
   },
+  "transform": [
+    {
+      "filter": "datum.year == Year_selection"
+    }
+  ],
   "layer": [
     {
       "mark": {
@@ -32,14 +40,14 @@
           "type": "quantitative",
           "title": "Access (%)",
           "scale": {
-            "domain": [70, 100]
+            "domain": [45, 100]
           }
         },
         "y": {
           "field": "water_production",
           "type": "quantitative",
           "title": "Water Production",
-          "scale":{
+          "scale": {
             "domain": [0, 5500]
           }
         },
